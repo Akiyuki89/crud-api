@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: ./application
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./application:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - ./application/.env
+    command: npm run start

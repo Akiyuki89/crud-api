@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import config from '@config/env/dotenv.config';
 
 class MongoConnection {
-  static async Connect(): Promise<void> {
+  static async connect(): Promise<void> {
     try {
       await mongoose.connect(config.database_url);
       console.log('MongoDb connect');
@@ -12,7 +12,7 @@ class MongoConnection {
     }
   }
 
-  static async Disconnect(): Promise<void> {
+  static async disconnect(): Promise<void> {
     try {
       await mongoose.disconnect();
       console.log('MongoDb disconnected');
